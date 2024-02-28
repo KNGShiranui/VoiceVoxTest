@@ -1,0 +1,87 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+/* sidebar */
+.sidebar {
+  width: 250px;
+  position: fixed;
+  top: 0; /* ヘッダーの高さに合わせて調整 */
+  left: 0;
+  bottom: 0;
+  z-index: 50;
+  background-color: #333;
+  /* 他のスタイリング */
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar ul li {
+  color: white;
+  padding: 8px;
+  border-bottom: 1px solid #444;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+}
+.sidebar ul li a:hover {
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 1), /* 白い光1 */
+    0 0 20px rgba(255, 255, 255, 1), /* 白い光2 */
+    0 0 30px rgba(255, 255, 255, 1), /* 白い光3 */
+    0 0 40px rgba(255, 255, 255, 1); /* 白い光4 */
+  transition: text-shadow 0.3s ease;
+  background-color: transparent; /* 背景色を透明に設定 */
+}
+
+/* header */
+.header {
+  width: 100%;
+  position: fixed;
+  background-color: #bbb; /* ヘッダーの背景色 */
+  padding: 0 16px;
+  height: 40px; /* ヘッダーの内側の余白を設定 */
+  top: 0;
+  left: 250px;
+  z-index: 100;
+  display: flex; /* Flexboxを使用 */
+  align-items: center; /* 中央揃えに */
+}
+.header a {
+  color: #333; /* リンクの色を設定 */
+  text-decoration: none; /* リンクの下線を消す */
+  font-size: 12px; /* テキストのサイズを設定 */
+  padding: 8px; /* リンク周りに余白を設定 */
+  display: inline-flex; /* リンクをflex要素として扱う */
+  align-items: center; /* アイコンとテキストを中央揃えに */
+}
+.header a:hover {
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 1), /* 白い光1 */
+    0 0 20px rgba(255, 255, 255, 1), /* 白い光2 */
+    0 0 30px rgba(255, 255, 255, 1), /* 白い光3 */
+    0 0 40px rgba(255, 255, 255, 1); /* 白い光4 */
+  transition: text-shadow 0.3s ease;
+  background-color: transparent; /* 背景色を透明に設定 */
+}
+
+/* body */
+body {
+  padding-top: 0px; /* ヘッダーの高さに合わせて調整 */
+  padding-left: 250px; /* サイドバーの幅に合わせて調整 */
+}
+
