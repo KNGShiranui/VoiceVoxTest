@@ -9,4 +9,5 @@ Rails.application.routes.draw do
     get 'read_blog', on: :member, as: :read
   end
     root 'home#home'
+    get 'audios/stream/:id', to: 'audios#stream', as: 'audio_stream'
 end
