@@ -1,9 +1,11 @@
 class VoicevoxService
   include HTTParty
+  # base_uriは、HTTParty gemを使用するクラスメソッドで、このサービスクラスがリクエストを送信する際の基本となるURLを設定
   base_uri 'http://localhost:50021'
 
   def self.text_to_speech(text, speaker_id)
     # audio_queryのエンドポイントにPOSTリクエストを送信する
+    # CGI.escapeメソッドは、URLに含めるテキスト文字列を安全にエスケープするために使用される。
     query_response = post("/audio_query?text=#{CGI.escape(text)}&speaker=#{speaker_id}")
 
     # ステータスコードが200以外の場合は、エラーログを出力してnilを返す
