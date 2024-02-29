@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  include HTTParty
   before_action :set_blog, only: %i[ show edit update destroy ]
 
   def index
@@ -10,6 +11,17 @@ class BlogsController < ApplicationController
   end
 
   def show
+  end
+
+  def read_blog
+    blog = Blog.find(params[:id])
+    voice_data = VoicevoxService.text_to_speech(blog.content, 3)
+
+    if voice_data
+      send_data voice_data, type: 'audio/wav', disposition: 'inline'
+    else
+      render plain: "音声合成に失敗しました。", status: :internal_server_error
+    end
   end
 
   def new

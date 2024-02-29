@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :blogs do
     get 'my_index', on: :collection, as: :my
+    get 'read_blog', on: :member, as: :read
   end
     root 'home#home'
 end
